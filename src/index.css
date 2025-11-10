@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1ch;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+.plants h2 {
+  margin-left: 1rem;
+}
+
+.plants ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+  gap: 1ch;
+}
+
+.plant {
+  border: 1px solid #eee;
+  padding: 1rem;
+  display: grid;
+  gap: 1ch;
+}
+
+.plant figure {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.cart ul {
+  list-style-type: none;
+}
+
+.cartItem {
+  padding-bottom: 0.5rem;
+}
+.cartItem > div:first-child {
+  padding-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.cartItemQuantity button {
+  /* display: inline-block; */
+  width: 5em;
+  height: 2em;
+}
+
+.cartItemQuantity span {
+  display: inline-block;
+  width: 5rem;
+  text-align: center;
+}
