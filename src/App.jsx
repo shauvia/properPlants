@@ -1,72 +1,7 @@
 import { useState } from "react";
 import PLANTS from "./data";
-
-function PlantDetails({ weed, onAddToCart }) {
-  return (
-    <>
-      <li className="plant">
-        <figure>{weed.image}</figure>
-        <h3>{weed.name}</h3>
-        <button onClick={() => onAddToCart(weed)}>Add to cart</button>
-      </li>
-    </>
-  );
-}
-
-function Plants({ flowers, onAddToCart }) {
-  return (
-    <section className="plants">
-      <h2>Plants</h2>
-      <ul>
-        {flowers.map((flower) => (
-          <PlantDetails
-            key={flower.id}
-            onAddToCart={onAddToCart}
-            weed={flower}
-          />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function Cart({ onAddToCart, onRemoveFromCart, cart }) {
-  if (!cart) {
-    return <p>Cart is empty</p>;
-  }
-
-  return (
-    <section className="cart">
-      <h2>Cart</h2>
-      <ul>
-        {cart.map((item) => (
-          <CartItem
-            onAddToCart={onAddToCart}
-            onRemoveFromCart={onRemoveFromCart}
-            plant={item}
-            key={item.id}
-          />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function CartItem({ plant, onRemoveFromCart, onAddToCart }) {
-  return (
-    <li className="cartItem">
-      <div>
-        {plant.image}
-        {plant.name}
-      </div>
-      <div className="cartItemQuantity">
-        <button onClick={() => onRemoveFromCart(plant)}>-</button>
-        <span>{plant.quantity}</span>
-        <button onClick={() => onAddToCart(plant)}>+</button>
-      </div>
-    </li>
-  );
-}
+import Plants from "./plants/plants";
+import Cart from "./cart/cart";
 
 export default function App() {
   const [flowers] = useState(PLANTS);
